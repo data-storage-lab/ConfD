@@ -4,13 +4,13 @@ This program will take a manpage as input and parse out the options and features
 
 **Running ConfD-specCk**
 
-```python3 main.py \<manfile\>```  
+```python3 main.py <manfile>```  
 
 For example, ```python3 main.py mke2fs.8```
 
 
 **Running Json Compare**
 
-```python3 jsonCompare.py \<ConfD-specCK jsonfile\> \<taint analysis jsonfile\>```
+```python3 jsonCompare.py <ConfD-specCK jsonfile> <taint analysis jsonfile>```
 
-For example, ```python3 jsonCompare.py jsonfile.json mke2fs_constraints.json
+For example, ```python3 jsonCompare.py jsonfile.json mke2fs_constraints.json```
