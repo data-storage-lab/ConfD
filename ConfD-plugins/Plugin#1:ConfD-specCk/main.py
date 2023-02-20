@@ -3,7 +3,7 @@ import subprocess
 from pprint import pprint
 import json
 import re
-
+import copy
 
 #convert a K, M, G, or T bytes to bytes
 def convertBytes(num):
@@ -347,7 +347,7 @@ def enableDisable(dict, dictCopy, parsedOptions):
         if len(dict[key]["CPD_param"]) > 0:
             for dependency in dict[key]["CPD_param"]:
                 for listt in parsedOptions:
-                    if dependency == listt[0]:
+                    if key == listt[0]:
                         enableindex = []
                         disableindex = []
                         stringsplit = listt[1].split(" ")
@@ -359,15 +359,15 @@ def enableDisable(dict, dictCopy, parsedOptions):
                                 disableindex.append(i)
                         
                         if len(enableindex) > 0:
-                            dependencyFound = checkIndexes(enableindex, stringsplit, key)
+                            dependencyFound = checkIndexes(enableindex, stringsplit, dependency)
                             if dependencyFound:
-                                index = dict[key][feature]["CPD_param"].index(dependency)
-                                dictCopy[key][feature]["CPD_param"][index] = dependency + " enable"
+                                index = dict[key]["CPD_param"].index(dependency)
+                                dictCopy[key]["CPD_param"][index] = dependency+":"+ " enable"
                         if len(disableindex) > 0:
-                            dependencyFound = checkIndexes(disableindex, stringsplit, key)
+                            dependencyFound = checkIndexes(disableindex, stringsplit, dependency)
                             if dependencyFound:
-                                index = dict[key][feature]["CPD_param"].index(dependency)
-                                dictCopy[key][feature]["CPD_param"][index] = dependency + " disable"
+                                index = dict[key]["CPD_param"].index(dependency)
+                                dictCopy[key]["CPD_param"][index] = dependency+":"+ " disable"
 
 
     #Search for features that need to be enabled or disabled in other options
@@ -379,7 +379,7 @@ def enableDisable(dict, dictCopy, parsedOptions):
                 if i > 6:
                     for dependency in dict[key][feature]["CPD_param"]:
                         for listt in parsedOptions:
-                            if dependency == listt[0]:
+                            if key == listt[0]:
                                 enableindex = []
                                 disableindex = []
                                 stringsplit = listt[1].split(" ")
@@ -391,15 +391,15 @@ def enableDisable(dict, dictCopy, parsedOptions):
                                         disableindex.append(i)
 
                                 if len(enableindex) > 0:
-                                    dependencyFound = checkIndexes(enableindex, stringsplit, feature)
+                                    dependencyFound = checkIndexes(enableindex, stringsplit, dependency)
                                     if dependencyFound:
                                         index = dict[key][feature]["CPD_param"].index(dependency)
-                                        dictCopy[key][feature]["CPD_param"][index] = dependency + " enable"
+                                        dictCopy[key][feature]["CPD_param"][index] = dependency+":"+ " enable"
                                 if len(disableindex) > 0:
-                                    dependencyFound = checkIndexes(disableindex, stringsplit, feature)
+                                    dependencyFound = checkIndexes(disableindex, stringsplit, dependency)
                                     if dependencyFound:
                                         index = dict[key][feature]["CPD_param"].index(dependency)
-                                        dictCopy[key][feature]["CPD_param"][index] = dependency + " disable"
+                                        dictCopy[key][feature]["CPD_param"][index] = dependency+":"+ " disable"
 
 
     #search for features that need to be enabled or disabled in other features       
@@ -413,7 +413,7 @@ def enableDisable(dict, dictCopy, parsedOptions):
                         for listt in parsedOptions:
                             if len(listt) > 2:
                                 for j in range(2, len(listt)):
-                                    if dependency == listt[j][0][0]:
+                                    if feature == listt[j][0][0]:
                                         enableindex = []
                                         disableindex = []
                                         stringsplit = listt[j][0][1].split(" ")
@@ -425,15 +425,15 @@ def enableDisable(dict, dictCopy, parsedOptions):
                                                 disableindex.append(i)
 
                                         if len(enableindex) > 0:
-                                            dependencyFound = checkIndexes(enableindex, stringsplit, feature)
+                                            dependencyFound = checkIndexes(enableindex, stringsplit, dependency)
                                             if dependencyFound:
                                                 index = dict[key][feature]["CPD_param"].index(dependency)
-                                                dictCopy[key][feature]["CPD_param"][index] = dependency + " enable"
+                                                dictCopy[key][feature]["CPD_param"][index] = dependency+":"+ " enable"
                                         if len(disableindex) > 0:
-                                            dependencyFound = checkIndexes(disableindex, stringsplit, feature)
+                                            dependencyFound = checkIndexes(disableindex, stringsplit, dependency)
                                             if dependencyFound:
                                                 index = dict[key][feature]["CPD_param"].index(dependency)
-                                                dictCopy[key][feature]["CPD_param"][index] = dependency + " disable"
+                                                dictCopy[key][feature]["CPD_param"][index] = dependency+":"+ " disable"
     return dictCopy
 
 #check if dependency is in the range of the enable or disable. Checks 5 indexes before and after the enable or disable index 
@@ -451,6 +451,56 @@ def checkIndexes(indexes, stringsplit, feature):
                 dependencyFound = True
                 break
     return dependencyFound
+
+def flipDependencies(dict):
+    copyOfDict = copy.deepcopy(dict)
+
+    for key in copyOfDict:
+        #make CPD_param empty
+        copyOfDict[key]["CPD_param"] = []
+        if len(copyOfDict[key]) > 6:
+            i = 0
+            for feature in copyOfDict[key]:
+                i+=1
+                if i > 6:
+                    copyOfDict[key][feature]["CPD_param"] = []
+
+    for key in dict:
+        if len(dict[key]["CPD_param"]) > 0:
+            for dependency in dict[key]["CPD_param"]:
+                if dependency in copyOfDict:
+                    copyOfDict[dependency]["CPD_param"].append(key)
+                else:
+                    for keyy in copyOfDict:
+                        if len(copyOfDict[keyy]) > 6:
+                            i = 0
+                            for feature in copyOfDict[keyy]:
+                                i+=1
+                                if i > 6:
+                                    if dependency in copyOfDict[keyy][feature]:
+                                        copyOfDict[keyy][dependency]["CPD_param"].append(feature)
+    
+    for key in dict:
+        if len(dict[key]) > 6:
+            i = 0
+            for feature in dict[key]:
+                i+=1
+                if i > 6:
+                    if len(dict[key][feature]["CPD_param"]) > 0:
+                        for dependency in dict[key][feature]["CPD_param"]:
+                            if dependency in copyOfDict:
+                                copyOfDict[dependency]["CPD_param"].append(feature)
+                            else:
+                                for keyy in copyOfDict:
+                                    if len(copyOfDict[keyy]) > 6:
+                                        i = 0
+                                        for feature in copyOfDict[keyy]:
+                                            i+=1
+                                            if i > 6:
+                                                if dependency in copyOfDict[keyy][feature]:
+                                                    copyOfDict[keyy][dependency]["CPD_param"].append(feature)
+
+    return copyOfDict
 
 
 #This program will take a inputted manfile and parse out the options and features part of the manfile. Then look for self dependencies and cross dependencies. Determine if there 
@@ -510,6 +560,8 @@ def main():
             #get flag
             flag = option.split()[0]
             if option[option.index('-') + 2] == ' ' and option[option.index('-') + 3] != ' ':
+                word = option.split()[1]
+            elif option[option.index('-') + 2] == ' ' and option[option.index('-') + 4] != ' ':
                 word = option.split()[1]
             if len(word) > 0:
                 fullFlag = flag + " " + word
@@ -602,11 +654,17 @@ def main():
     print("Cross Dependencies found: " + str(crossDependencyCounter(jsonobj)))
     print("Self Dependencies found: " + str(selfDependencyCounter(jsonobj)))
 
-    copyOfJsonobj = jsonobj.copy()
+    
 
+    
+    
+    #flip dependencies to make more consistent with other scripts.
+    jsonobj = flipDependencies(jsonobj)
+
+    copyOfJsonobj = jsonobj.copy()
     #search for dependencies that have a enable/disable relationship
     jsonobj = enableDisable(jsonobj, copyOfJsonobj, parsedOptions)
-    
+
     jsonfile = open("jsonfile.json", "w")
     jsonobj = json.dumps(jsonobj, indent=4)
     jsonfile.write(jsonobj)

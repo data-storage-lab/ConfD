@@ -5,7 +5,9 @@
         "value_range_max": 4096,
         "value_range_min": 1024,
         "CPD_optional_param": [],
-        "CPD_param": []
+        "CPD_param": [
+            "-T usage-type[,...]"
+        ]
     },
     "-c": {
         "id": 2,
@@ -13,17 +15,17 @@
         "value_range_max": null,
         "value_range_min": null,
         "CPD_optional_param": [],
-        "CPD_param": [
-            "-l filename"
-        ]
+        "CPD_param": []
     },
-    "-C": {
+    "-C cluster-size": {
         "id": 3,
         "value_type": null,
         "value_range_max": 268435456,
         "value_range_min": 2048,
         "CPD_optional_param": [],
-        "CPD_param": []
+        "CPD_param": [
+            "bigalloc: enable"
+        ]
     },
     "-d root-directory": {
         "id": 4,
@@ -76,9 +78,7 @@
         "value_range_max": null,
         "value_range_min": null,
         "CPD_optional_param": [],
-        "CPD_param": [
-            "-g blocks-per-group"
-        ],
+        "CPD_param": [],
         "encoding=encoding-name": {
             "value_type": null,
             "value_range_max": null,
@@ -105,9 +105,7 @@
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "stripe_width=stripe-width"
-            ]
+            "CPD_param": []
         },
         "stripe_width=stripe-width": {
             "value_type": null,
@@ -121,10 +119,7 @@
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "location=journal-location",
-                "device=external-journal"
-            ]
+            "CPD_param": []
         },
         "resize=max-online-resize": {
             "value_type": null,
@@ -187,10 +182,7 @@
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "nodiscard",
-                "quotatype"
-            ]
+            "CPD_param": []
         },
         "nodiscard": {
             "value_type": null,
@@ -221,7 +213,10 @@
         "value_range_max": null,
         "value_range_min": null,
         "CPD_optional_param": [],
-        "CPD_param": []
+        "CPD_param": [
+            "-E extended-options",
+            "bigalloc: enable"
+        ]
     },
     "-G number-of-groups": {
         "id": 10,
@@ -229,7 +224,9 @@
         "value_range_max": null,
         "value_range_min": null,
         "CPD_optional_param": [],
-        "CPD_param": []
+        "CPD_param": [
+            "flex_bg: enable"
+        ]
     },
     "-i bytes-per-inode": {
         "id": 11,
@@ -237,9 +234,7 @@
         "value_range_max": null,
         "value_range_min": null,
         "CPD_optional_param": [],
-        "CPD_param": [
-            "-N number-of-inodes"
-        ]
+        "CPD_param": []
     },
     "-I inode-size": {
         "id": 12,
@@ -255,7 +250,9 @@
         "value_range_max": null,
         "value_range_min": null,
         "CPD_optional_param": [],
-        "CPD_param": []
+        "CPD_param": [
+            "-J journal-options"
+        ]
     },
     "-J journal-options": {
         "id": 14,
@@ -263,9 +260,7 @@
         "value_range_max": null,
         "value_range_min": null,
         "CPD_optional_param": [],
-        "CPD_param": [
-            "-j"
-        ],
+        "CPD_param": [],
         "size=journal-size": {
             "value_type": null,
             "value_range_max": null,
@@ -278,18 +273,14 @@
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "device=external-journal"
-            ]
+            "CPD_param": []
         },
         "device=external-journal": {
             "value_type": null,
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "journal_dev"
-            ]
+            "CPD_param": []
         }
     },
     "-l filename": {
@@ -298,7 +289,9 @@
         "value_range_max": null,
         "value_range_min": null,
         "CPD_optional_param": [],
-        "CPD_param": []
+        "CPD_param": [
+            "-c"
+        ]
     },
     "-L new-volume-label": {
         "id": 16,
@@ -338,7 +331,9 @@
         "value_range_max": null,
         "value_range_min": null,
         "CPD_optional_param": [],
-        "CPD_param": []
+        "CPD_param": [
+            "-i bytes-per-inode"
+        ]
     },
     "-o creator-os": {
         "id": 21,
@@ -355,7 +350,7 @@
         "value_range_min": null,
         "CPD_optional_param": [],
         "CPD_param": [
-            "-t fs-type"
+            "-T usage-type[,...]"
         ],
         "64bit": {
             "value_type": null,
@@ -369,28 +364,21 @@
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "-C enable",
-                "-g blocks-per-group enable"
-            ]
+            "CPD_param": []
         },
         "casefold": {
             "value_type": null,
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "encoding=encoding-name"
-            ]
+            "CPD_param": []
         },
         "dir_index": {
             "value_type": null,
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "large_dir"
-            ]
+            "CPD_param": []
         },
         "dir_nlink": {
             "value_type": null,
@@ -425,11 +413,7 @@
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "-t fs-type",
-                "bigalloc enable",
-                "metadata_csum"
-            ]
+            "CPD_param": []
         },
         "extra_isize": {
             "value_type": null,
@@ -450,19 +434,14 @@
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "-G number-of-groups enable",
-                "packed_meta_blocks[= <0 to disable, 1 to enable>]"
-            ]
+            "CPD_param": []
         },
         "has_journal": {
             "value_type": null,
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "-t fs-type"
-            ]
+            "CPD_param": []
         },
         "huge_file": {
             "value_type": null,
@@ -504,9 +483,7 @@
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "metadata_csum_seed"
-            ]
+            "CPD_param": []
         },
         "metadata_csum_seed": {
             "value_type": null,
@@ -527,9 +504,7 @@
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "mmp_update_interval=interval enable"
-            ]
+            "CPD_param": []
         },
         "project": {
             "value_type": null,
@@ -543,9 +518,7 @@
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "project"
-            ]
+            "CPD_param": []
         },
         "resize_inode": {
             "value_type": null,
@@ -559,31 +532,21 @@
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "num_backup_sb=<0|1|2> enable",
-                "resize_inode enable",
-                "sparse_super2"
-            ]
+            "CPD_param": []
         },
         "sparse_super2": {
             "value_type": null,
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "num_backup_sb=<0|1|2> enable",
-                "resize_inode enable"
-            ]
+            "CPD_param": []
         },
         "uninit_bg": {
             "value_type": null,
             "value_range_max": null,
             "value_range_min": null,
             "CPD_optional_param": [],
-            "CPD_param": [
-                "lazy_itable_init[= <0 to disable, 1 to enable>] enable",
-                "metadata_csum"
-            ]
+            "CPD_param": []
         },
         "verity": {
             "value_type": null,
@@ -623,7 +586,11 @@
         "value_range_max": null,
         "value_range_min": null,
         "CPD_optional_param": [],
-        "CPD_param": []
+        "CPD_param": [
+            "-O [^]feature[,...]",
+            "extent",
+            "has_journal"
+        ]
     },
     "-T usage-type[,...]": {
         "id": 27,
@@ -631,10 +598,7 @@
         "value_range_max": 16,
         "value_range_min": 16,
         "CPD_optional_param": [],
-        "CPD_param": [
-            "-b block-size",
-            "-O [^]feature[,...]"
-        ]
+        "CPD_param": []
     },
     "-U UUID": {
         "id": 28,

@@ -1,0 +1,509 @@
+{
+    "64bit": {
+        "id": 1,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "blocksize",
+            "inode_ratio",
+            "num_inodes"
+        ],
+        "critical": {
+            "extents": "enable"
+        }
+    },
+    "bigalloc": {
+        "id": 2,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "blocksize",
+            "cluster_size"
+        ],
+        "critical": {
+            "extents": "enable"
+        }
+    },
+    "blocksize": {
+        "id": 3,
+	"flag": "-b",
+        "value_type": "i32",
+	"takes_value": "yes",
+        "value_range_max": "65536",
+        "value_range_min": "1024",
+        "dependency": [
+            "64bit",
+            "bigalloc",
+            "cluster_size",
+            "inode_ratio",
+            "inode_size",
+            "num_inodes"
+        ]
+    },
+    "cluster_size": {
+        "id": 4,
+	"flag": "-C",
+        "value_type": "i32",
+	"takes_value": "yes",
+        "value_range_max": "536870912",
+        "value_range_min": "1025",
+        "dependency": [
+            "inode_ratio"
+        ],
+        "critical": {
+            "bigalloc": "enable",
+            "blocksize": "smaller"
+        }
+    },
+    "casefold": {
+        "id": 5,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "encoding"
+        ]
+    },
+    "dir_index": {
+        "id": 6,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "dir_nlink": {
+        "id": 7,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "extra_isize",
+            "flex_bg",
+            "huge_file",
+            "metadata_csum",
+            "uninit_bg"
+        ]
+    },
+    "ea_inode": {
+        "id": 8,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "encoding": {
+        "id": 9,
+	"flag": "-E",
+        "value_type": "i32",
+	"takes_value": "yes",
+        "value_range_max": null,
+        "value_range_min": "0",
+        "dependency": [
+            "casefold"
+        ]
+    },
+    "encrypt": {
+        "id": 10,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "ext_attr": {
+        "id": 11,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "extents": {
+        "id": 12,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "64bit",
+            "bigalloc",
+            "journal_dev",
+            "metadata_csum"
+        ]
+    },
+    "extra_isize": {
+        "id": 13,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "dir_nlink",
+            "flex_bg",
+            "huge_file",
+            "metadata_csum",
+            "uninit_bg"
+        ]
+    },
+    "fast_commit": {
+        "id": 14,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "filetype": {
+        "id": 15,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "flex_bg": {
+        "id": 16,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "dir_nlink",
+            "extra_isize",
+            "flex_bg_size",
+            "huge_file",
+            "metadata_csum",
+            "packed_meta_blocks",
+            "uninit_bg"
+        ]
+    },
+    "flex_bg_size": {
+        "id": 17,
+	"flag": "-G",
+        "value_type": "i64",
+	"takes_value": "yes",
+        "value_range_max": "4294967295",
+        "value_range_min": "1",
+        "dependency": [],
+        "critical": {
+            "flex_bg": "enable"
+        }
+    },
+    "has_journal": {
+        "id": 18,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "huge_file": {
+        "id": 19,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "dir_nlink",
+            "extra_isize",
+            "flex_bg",
+            "metadata_csum",
+            "uninit_bg"
+        ]
+    },
+    "inline_data": {
+        "id": 20,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "inode_size"
+        ]
+    },
+    "inode_ratio": {
+        "id": 21,
+	"flag": "-i",
+        "value_type": "i32",
+	"takes_value": "yes",
+        "value_range_max": "67108864",
+        "value_range_min": "1024",
+        "dependency": [
+            "64bit",
+            "blocksize",
+            "cluster_size",
+            "inode_size",
+            "num_inodes"
+        ]
+    },
+    "inode_size": {
+        "id": 22,
+	"flag": "-I",
+        "value_type": "i32",
+	"takes_value": "yes",
+        "value_range_max": null,
+        "value_range_min": "128",
+        "dependency": [
+            "blocksize",
+            "inline_data",
+            "inode_ratio",
+            "num_inodes"
+        ]
+    },
+    "journal_dev": {
+        "id": 23,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "extents",
+            "metadata_csum",
+            "reserved_ratio"
+        ]
+    },
+    "largedir": {
+        "id": 25,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "large_file": {
+        "id": 26,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "meta_bg": {
+        "id": 27,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [],
+        "critical": {
+            "resize_inode": "disable"
+        }
+    },
+    "metadata_csum": {
+        "id": 28,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "dir_nlink",
+            "extents",
+            "extra_isize",
+            "flex_bg",
+            "huge_file",
+            "journal_dev",
+            "metadata_csum_seed",
+            "uninit_bg"
+        ]
+    },
+    "metadata_csum_seed": {
+        "id": 29,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "metadata_csum"
+        ]
+    },
+    "mmp": {
+        "id": 30,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "super_only"
+        ]
+    },
+    "num_inodes": {
+        "id": 31,
+	"flag": "-N",
+        "value_type": "i64",
+	"takes_value": "yes",
+        "value_range_max": "4294967295",
+        "value_range_min": null,
+        "dependency": [
+            "64bit",
+            "blocksize",
+            "inode_ratio",
+            "inode_size"
+        ]
+    },
+    "lazy_itable_init": {
+        "id": 33,
+	"flag": "-E",
+        "value_type": null,
+	"takes_value": "yes",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "no_copy_xattrs": {
+        "id": 34,
+	"flag": "-E",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "packed_meta_blocks": {
+        "id": 35,
+	"flag": "-E",
+        "value_type": null,
+	"takes_value": "yes",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "flex_bg"
+        ]
+    },
+    "quota": {
+        "id": 36,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "reserved_ratio": {
+        "id": 37,
+	"flag": "-m",
+        "value_type": "double",
+	"takes_value": "yes",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "journal_dev"
+        ]
+    },
+    "resize_inode": {
+        "id": 38,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [],
+        "critical": {
+            "sparse_super": "enable",
+            "meta_bg": "disable"
+        }
+    },
+    "sparse_super": {
+        "id": 39,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "resize_inode"
+        ]
+    },
+    "sparse_super2": {
+        "id": 40,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "stable_inodes": {
+        "id": 41,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "super_only": {
+        "id": 42,
+	"flag": "-S",
+        "value_type": null,
+	"takes_value": "flag_only",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "mmp"
+        ]
+    },
+    "uninit_bg": {
+        "id": 43,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": [
+            "dir_nlink",
+            "extra_isize",
+            "flex_bg",
+            "huge_file",
+            "metadata_csum"
+        ]
+    },
+    "verity": {
+        "id": 44,
+	"flag": "-O",
+        "value_type": null,
+	"takes_value": "no",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    },
+    "volume_label": {
+        "id": 45,
+	"flag": "-L",
+        "value_type": null,
+	"takes_value": "yes",
+        "value_range_max": null,
+        "value_range_min": null,
+        "dependency": []
+    }
+}
