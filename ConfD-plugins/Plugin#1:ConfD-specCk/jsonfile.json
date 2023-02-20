@@ -1,0 +1,692 @@
+{
+    "-b block-size": {
+        "id": 1,
+        "value_type": null,
+        "value_range_max": 4096,
+        "value_range_min": 1024,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-c": {
+        "id": 2,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": [
+            "-l filename"
+        ]
+    },
+    "-C": {
+        "id": 3,
+        "value_type": null,
+        "value_range_max": 268435456,
+        "value_range_min": 2048,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-d root-directory": {
+        "id": 4,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-D": {
+        "id": 5,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-e error-behavior": {
+        "id": 6,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": [],
+        "continue    Continue normal execution.": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "remount-ro  Remount filesystem read-only.": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "panic       Cause a kernel panic.": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        }
+    },
+    "-E extended-options": {
+        "id": 7,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": [
+            "-g blocks-per-group"
+        ],
+        "encoding=encoding-name": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "encoding_flags=encoding-flags": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "mmp_update_interval=interval": {
+            "value_type": null,
+            "value_range_max": 300,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "stride=stride-size": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "stripe_width=stripe-width"
+            ]
+        },
+        "stripe_width=stripe-width": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "offset=offset": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "location=journal-location",
+                "device=external-journal"
+            ]
+        },
+        "resize=max-online-resize": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "lazy_itable_init[= <0 to disable, 1 to enable>]": {
+            "value_type": null,
+            "value_range_max": 1,
+            "value_range_min": 1,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "lazy_journal_init[= <0 to disable, 1 to enable>]": {
+            "value_type": null,
+            "value_range_max": 1,
+            "value_range_min": 1,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "no_copy_xattrs": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "num_backup_sb=<0|1|2>": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "packed_meta_blocks[= <0 to disable, 1 to enable>]": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "root_owner[=uid:gid]": {
+            "value_type": null,
+            "value_range_max": 42,
+            "value_range_min": 1,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "test_fs": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "discard": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "nodiscard",
+                "quotatype"
+            ]
+        },
+        "nodiscard": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "quotatype": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        }
+    },
+    "-F": {
+        "id": 8,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-g blocks-per-group": {
+        "id": 9,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-G number-of-groups": {
+        "id": 10,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-i bytes-per-inode": {
+        "id": 11,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": [
+            "-N number-of-inodes"
+        ]
+    },
+    "-I inode-size": {
+        "id": 12,
+        "value_type": null,
+        "value_range_max": 256,
+        "value_range_min": 128,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-j": {
+        "id": 13,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-J journal-options": {
+        "id": 14,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": [
+            "-j"
+        ],
+        "size=journal-size": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "location=journal-location": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "device=external-journal"
+            ]
+        },
+        "device=external-journal": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "journal_dev"
+            ]
+        }
+    },
+    "-l filename": {
+        "id": 15,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-L new-volume-label": {
+        "id": 16,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-m reserved-blocks-percentage": {
+        "id": 17,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-M last-mounted-directory": {
+        "id": 18,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-n": {
+        "id": 19,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-N number-of-inodes": {
+        "id": 20,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-o creator-os": {
+        "id": 21,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-O [^]feature[,...]": {
+        "id": 22,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": [
+            "-t fs-type"
+        ],
+        "64bit": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "bigalloc": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "-C enable",
+                "-g blocks-per-group enable"
+            ]
+        },
+        "casefold": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "encoding=encoding-name"
+            ]
+        },
+        "dir_index": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "large_dir"
+            ]
+        },
+        "dir_nlink": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "ea_inode": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "encrypt": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "ext_attr": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "extent": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "-t fs-type",
+                "bigalloc enable",
+                "metadata_csum"
+            ]
+        },
+        "extra_isize": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "filetype": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "flex_bg": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "-G number-of-groups enable",
+                "packed_meta_blocks[= <0 to disable, 1 to enable>]"
+            ]
+        },
+        "has_journal": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "-t fs-type"
+            ]
+        },
+        "huge_file": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": 2,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "inline_data": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "journal_dev": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "large_dir": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "large_file": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": 2,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "metadata_csum": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "metadata_csum_seed"
+            ]
+        },
+        "metadata_csum_seed": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "meta_bg": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "mmp": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "mmp_update_interval=interval enable"
+            ]
+        },
+        "project": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "quota": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "project"
+            ]
+        },
+        "resize_inode": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "sparse_super": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "num_backup_sb=<0|1|2> enable",
+                "resize_inode enable",
+                "sparse_super2"
+            ]
+        },
+        "sparse_super2": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "num_backup_sb=<0|1|2> enable",
+                "resize_inode enable"
+            ]
+        },
+        "uninit_bg": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": [
+                "lazy_itable_init[= <0 to disable, 1 to enable>] enable",
+                "metadata_csum"
+            ]
+        },
+        "verity": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        }
+    },
+    "-q": {
+        "id": 23,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-r revision": {
+        "id": 24,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-S": {
+        "id": 25,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-t fs-type": {
+        "id": 26,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-T usage-type[,...]": {
+        "id": 27,
+        "value_type": null,
+        "value_range_max": 16,
+        "value_range_min": 16,
+        "CPD_optional_param": [],
+        "CPD_param": [
+            "-b block-size",
+            "-O [^]feature[,...]"
+        ]
+    },
+    "-U UUID": {
+        "id": 28,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": [],
+        "clear  clear the filesystem UUID": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "random generate a new randomly-generated UUID": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        },
+        "time   generate a new time-based UUID": {
+            "value_type": null,
+            "value_range_max": null,
+            "value_range_min": null,
+            "CPD_optional_param": [],
+            "CPD_param": []
+        }
+    },
+    "-v": {
+        "id": 29,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-V": {
+        "id": 30,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    },
+    "-z undo_file": {
+        "id": 31,
+        "value_type": null,
+        "value_range_max": null,
+        "value_range_min": null,
+        "CPD_optional_param": [],
+        "CPD_param": []
+    }
+}
