@@ -1,0 +1,119 @@
+#! /bin/bash
+
+#Colors
+Color_Off='\033[0m'
+Red='\033[0;31m'
+Yellow='\033[1;33m'
+Green='\033[0;32m'
+
+echo ""
+
+#checks of arguments
+if [ $# == 0 ]; then
+	echo "Usage:"
+	echo "./single_test <test_path>"
+	echo ""
+	echo "Example:"
+	echo "./single_test d_fallocate"
+	echo ""
+	exit 0
+fi
+test_num="$1"
+echo "testing ${test_num}"
+
+#defines INT handler
+trap ctrl_c INT
+function ctrl_c () {
+	echo "exiting early"
+	cp tests/backup/${test_num}.bak tests/${test_num}/script
+	exit
+}
+
+#prepares backup directory 
+if [ ! -d "tests/backup" ]; then
+	echo "creating backup directory (./tests/backup)"
+	echo ""
+	mkdir tests/backup
+fi
+
+#prepares fail test directory
+if [ ! -d "fails" ]; then
+	echo "creating fail test directory (./fails)"
+	echo ""
+	mkdir fails
+fi
+
+#copies test to backup
+cp tests/${test_num}/script tests/backup/${test_num}.bak
+
+declare -i count=0
+declare -i pass_count=0
+#reads through config file
+while IFS= read -r line
+do
+	oldIFS="$IFS"
+	count+=1
+	
+	orig=""
+	config=""
+	if [[ $line == \(mke2fs\)* ]]; then
+
+		config="$line"
+		while IFS= read -r line2
+		do
+			if [[ $line2 == *\$MKE2FS* ]]; then
+				orig="$line2"
+			fi
+		done < "tests/${test_num}/script"
+
+		
+		output=$(echo $orig | rev | grep -oP '(?<=SF2EKM\$).*' | rev)
+		output+="\$MKE2FS "
+		
+		output+=$(echo $config | grep -oP '(?<=\(mke2fs\)).*')
+		output+=$(echo $orig | grep -oP '(?<=\$MKE2FS).*')
+		#echo "$output"
+
+		echo "$config"
+
+		#replaces test
+		sed -i "/\\\$MKE2FS/c\\$output" tests/${test_num}/script
+
+
+		#runs test
+		cd build/tests
+		test_results=$(./test_one ../../tests/${test_num})
+		cd ../../
+
+		#echo $test_results
+
+		#checks if test ran/passedpassed
+		if [[ "$test_results" == *": ok"* ]]; then
+			printf "${Green}Passed test${Color_Off}\n"
+			pass_count+=1
+		else
+			printf "${Red}Failed test${Color_Off}\n"
+			cp build/tests/${test_num}.log fails/${test_num}_${count}.log
+			cp tests/${test_num}/script fails/${test_num}_${count}.test
+		fi
+		
+
+		
+
+		echo ""
+
+	fi
+
+	#restores from backup
+	cp tests/backup/${test_num}.bak tests/${test_num}/script
+
+	IFS="$oldIFS"
+done < "config_state.txt" 
+
+printf ". ${pass_count}/${count} tests passed\n"
+
+#restores from backup
+cp tests/backup/${test_num}.bak tests/${test_num}/script
+
+exit 0
+

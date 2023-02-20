@@ -1,0 +1,50 @@
+(mke2fs) -t ext4 -C 16777216 -b 16384 -I 8192 -N 4294967296 -N 2147483648 -E encoding=utf8 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 16777216 -I 524288 -N 2147483648 -N 2147483648 -E encoding=utf8-12.1 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 16777216 -I 8388608 -N 268435456 -N 4294967296 -E encoding=utf8-12.1,resize=4294967296 -O uninit_bg,64bit,casefold,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 16777216 -I 8388608 -N 4294967296 -N 4294967296 -E encoding=utf8-12.1,resize=4294967296 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 16777216 -N 4294967296 -O 64bit,extra_isize,journal_dev,flex_bg,huge_file,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 16777216 -N 4294967296 -O 64bit,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 16777216 -N 4294967296 -O 64bit,journal_dev,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 2097152 -I 2097152 -N 4294967296 -E encoding=utf8 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 2097152 -N 2147483648 -O 64bit,extra_isize,journal_dev,flex_bg,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 2097152 -N 4294967296 -O 64bit,extra_isize,journal_dev,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 4194304 -I 4194304 -N 2147483648 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 8388608 -I 4194304 -N 1073741824 -N 2147483648 -E encoding=utf8,resize=536870912 -O uninit_bg,64bit,casefold,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 8388608 -I 4194304 -N 33554432 -N 4294967296 -E encoding=utf8,resize=4294967296 -O uninit_bg,64bit,casefold,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 8388608 -N 2147483648 -O 64bit,extra_isize,journal_dev,flex_bg,huge_file,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 16777216 -b 8388608 -N 2147483648 -O 64bit,journal_dev,bigalloc,extents,metadata_csum
+(mke2fs) -t ext4 -C 2097152 -b 2097152 -N 4294967296 -O 64bit,extra_isize,journal_dev,flex_bg,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 16777216 -I 16777216 -N 1073741824 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 16777216 -I 16777216 -N 2147483648 -N 2147483648 -E encoding=utf8-12.1,resize=1073741824 -O uninit_bg,64bit,casefold,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 16777216 -I 16777216 -N 4294967296 -N 2147483648 -E encoding=utf8,resize=4294967296 -O uninit_bg,64bit,casefold,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 16777216 -N 2147483648 -O 64bit,extra_isize,journal_dev,flex_bg,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 16777216 -N 4294967296 -O 64bit,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 2097152 -I 2097152 -N 2147483648 -N 4294967296 -E encoding=utf8-12.1,resize=1073741824 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 33554432 -I 16777216 -N 1073741824 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 33554432 -I 16777216 -N 2147483648 -N 4294967296 -E encoding=utf8,resize=4294967296 -O uninit_bg,64bit,casefold,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 33554432 -I 16777216 -N 4294967296 -N 4294967296 -E encoding=utf8-12.1,resize=4294967296 -O uninit_bg,64bit,casefold,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 33554432 -I 33554432 -N 2147483648 -N 4294967296 -E encoding=utf8-12.1,resize=4294967296 -O uninit_bg,64bit,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 33554432 -I 33554432 -N 2147483648 -N 4294967296 -E resize=2147483648 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 33554432 -I 33554432 -N 4294967296 -N 2147483648 -E encoding=utf8,resize=2147483648 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 33554432 -I 33554432 -N 4294967296 -N 2147483648 -E encoding=utf8,resize=4294967296 -O uninit_bg,64bit,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 33554432 -I 8388608 -N 4294967296 -N 1073741824 -E encoding=utf8-12.1,resize=4294967296 -O uninit_bg,64bit,casefold,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 33554432 -I 8388608 -N 4294967296 -N 4294967296 -E encoding=utf8,resize=4294967296 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 33554432 -N 1073741824 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 33554432 -N 2147483648 -O 64bit,journal_dev,bigalloc,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 33554432 -N 2147483648 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 33554432 -N 4294967296 -O 64bit,extra_isize,journal_dev,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 4194304 -I 4194304 -N 268435456 -N 1073741824 -E encoding=utf8 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 4194304 -I 4194304 -N 536870912 -N 2147483648 -E encoding=utf8-12.1,resize=2147483648 -O uninit_bg,64bit,casefold,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 4194304 -N 2147483648 -O 64bit,extra_isize,journal_dev,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 524288 -I 524288 -N 268435456 -N 2147483648 -E encoding=utf8,resize=268435456 -O uninit_bg,64bit,casefold,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 8388608 -I 2097152 -N 2147483648 -N 1073741824 -E resize=1073741824 -O uninit_bg,64bit,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 8388608 -I 4194304 -N 4294967296 -E encoding=utf8-12.1 -O uninit_bg,64bit,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 8388608 -N 2147483648 -N 2147483648 -O uninit_bg,64bit,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 8388608 -N 2147483648 -N 4294967296 -E resize=4294967296 -O uninit_bg,64bit,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 8388608 -N 2147483648 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 33554432 -b 8388608 -N 4294967296 -N 4294967296 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 4194304 -b 2097152 -N 2147483648 -O 64bit,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 4194304 -b 4194304 -I 131072 -N 1073741824 -N 4294967296 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 4194304 -b 4194304 -I 2097152 -N 2147483648 -N 4294967296 -E encoding=utf8,resize=4294967296 -O uninit_bg,64bit,casefold,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 4194304 -b 4194304 -N 2147483648 -O uninit_bg,64bit,extra_isize,journal_dev,flex_bg,huge_file,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum
+(mke2fs) -t ext4 -C 67108864 -b 16777216 -I 8388608 -N 2147483648 -N 536870912 -E resize=4294967296 -O uninit_bg,64bit,extra_isize,journal_dev,huge_file,flex_bg,metadata_csum_seed,bigalloc,dir_nlink,extents,metadata_csum

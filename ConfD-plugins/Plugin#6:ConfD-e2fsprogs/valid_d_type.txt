@@ -1,0 +1,12 @@
+d_bad_ostype
+d_dumpe2fs_group_only
+d_fallocate
+d_fallocate_bigalloc
+d_fallocate_blkmap
+d_loaddump
+d_punch
+d_punch_bigalloc
+d_special_files
+d_xattr_edits
+d_xattr_sorting
+
