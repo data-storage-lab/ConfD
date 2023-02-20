@@ -1,0 +1,43 @@
+#! /bin/bash
+
+#Colors
+Color_Off='\033[0m'
+Red='\033[0;31m'
+Green='\033[0;32m'
+
+echo ""
+echo "removing bulk_results.txt"
+echo ""
+rm -f bulk_results.txt
+
+#checks of arguments
+if [ $# == 0 ]; then
+	echo "Usage:"
+	echo "./bulk_test <test_list>"
+	echo ""
+	echo "Example:"
+	echo "./bulk_test valid_generic.txt"
+	echo ""
+	exit 0
+fi
+test_list="$1"
+echo "testing list ${test_list}"
+
+
+declare -i count=0
+#reads through config file
+while IFS= read -r line
+do
+	count+=1
+	echo ""
+	echo "reading testing list line..."
+	echo "testing ${line}"
+	echo ""
+	test_results=$(./single_test ${line})
+	echo -n ${line} >> bulk_results.txt
+	echo ${test_results} | rev | cut -d"." -f1 | rev >> bulk_results.txt
+
+done < "${test_list}" 
+
+exit 0
+
