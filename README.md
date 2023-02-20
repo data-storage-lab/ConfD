@@ -5,7 +5,7 @@ This repository contains the research prototype for the ConfD project and the fo
 Tabassum Mahmud, Om Rameshwar Gatla, Duo Zhang, Carson Love, Ryan Bumann, and Mai Zheng,
 Proceedings of the 21st USENIX Conference on File and Storage Technologies ([FAST](https://www.usenix.org/conference/fast23)), 2023.
 
-- "[Understanding the Fault Resilience of File System Checkers](https://dl.acm.org/doi/10.5555/3154601.3154608)",
+- "[Understanding Configuration Dependencies of File Systems](https://dl.acm.org/doi/abs/10.1145/3538643.3539756)",
 Tabassum Mahmud, Duo Zhang, Om Rameshwar Gatla, and Mai Zheng, 
 Proceedings of the 14th ACM Workshop on Hot Topics in Storage and File Systems ([HotStorage](https://www.hotstorage.org/2022/)), 2022. [**Best Paper Nominee**] 
 
