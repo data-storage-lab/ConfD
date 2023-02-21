@@ -1,7 +1,7 @@
 # README #
-# ConfD-private
+# ConfD #
 
-Private repo for ConfD project
+Repo for ConfD project
 
 This repository contains the research prototype for the ConfD project and the following publications: 
 
