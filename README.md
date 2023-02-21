@@ -1,8 +1,6 @@
 # README #
 # ConfD #
 
-Repo for ConfD project
-
 This repository contains the research prototype for the ConfD project and the following publications: 
 
 - "[ConfD: Analyzing Configuration Dependencies of File Systems for Fun and Profit](https://www.usenix.org/conference/fast23)",
