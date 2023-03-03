@@ -126,22 +126,22 @@ Store all the newly generated files to dependecy/ directory
 
 To see how to run each plugins, please refer to individual directories for the plugins.
 
-**Citing ConfD**
+# Citing ConfD #
 
 If you cite ConfD in your research, please you following BibTeX entry:
 
-```@inproceedings {mahmud2023confd,
-author = {Tabassum Mahmud and Om Rameshwar Gatla and Duo Zhang and Carson Love and Ryan Bumann and Mai Zheng},
-title = {{ConfD}: Analyzing Configuration Dependencies of File Systems for Fun and Profit},
-booktitle = {21st USENIX Conference on File and Storage Technologies (FAST 23)},
-year = {2023},
-isbn = {978-1-939133-32-8},
-address = {Santa Clara, CA},
-pages = {199--214},
-url = {https://www.usenix.org/conference/fast23/presentation/mahmud},
-publisher = {USENIX Association},
-month = feb,
-}```
+        @inproceedings {mahmud2023confd,
+        author = {Tabassum Mahmud and Om Rameshwar Gatla and Duo Zhang and Carson Love and Ryan Bumann and Mai Zheng},
+        title = {{ConfD}: Analyzing Configuration Dependencies of File Systems for Fun and Profit},
+        booktitle = {21st USENIX Conference on File and Storage Technologies (FAST 23)},
+        year = {2023},
+        isbn = {978-1-939133-32-8},
+        address = {Santa Clara, CA},
+        pages = {199--214},
+        url = {https://www.usenix.org/conference/fast23/presentation/mahmud},
+        publisher = {USENIX Association},
+        month = feb,
+        }
 
 # Contact #
 
