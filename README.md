@@ -3,7 +3,7 @@
 
 This repository contains the research prototype for the ConfD project and the following publications: 
 
-- "[ConfD: Analyzing Configuration Dependencies of File Systems for Fun and Profit](https://www.usenix.org/system/files/fast23-mahmud.pdf)",
+- "[ConfD: Analyzing Configuration Dependencies of File Systems for Fun and Profit](https://www.usenix.org/conference/fast23/presentation/mahmud)",
 Tabassum Mahmud, Om Rameshwar Gatla, Duo Zhang, Carson Love, Ryan Bumann, and Mai Zheng,
 Proceedings of the 21st USENIX Conference on File and Storage Technologies ([FAST](https://www.usenix.org/conference/fast23)), 2023.
 
