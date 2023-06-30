@@ -8,6 +8,9 @@
 Provide the function name (the function where the taint analysis will start from) and variable name (source of the taint analysis) in function_name and variable file respectively inside the "build" directory.
 
 ```cd llvm-project-llvmorg-14.0.0/build/```
+
 ```bin/opt -load build/lib/libinterProPass.so -enable-new-pm=0 -interpro <path-to-target-bitcode>```
+
 example:
+
 ```bin/opt -load build/lib/libinterProPass.so -enable-new-pm=0 -interpro mke2fs.ll```
