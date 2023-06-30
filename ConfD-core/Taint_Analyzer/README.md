@@ -6,6 +6,10 @@
 
 **Running Taint Analyzer to generate taint traces**
 
+1. "sepatrate_objects.py" takes the mke2fs_constraints.josn file and runs taint analysis for each of the parameters automatically and generates taint traces.
+
+2. Taint Analyzer can also be run manually by providing function_name and variable as input and running the following commands:
+ 
 Provide the function name (the function where the taint analysis will start from) and variable name (source of the taint analysis) in function_name and variable file respectively inside the "build" directory. See examples of function_name and variable for mke2fs inside the interPro directory.
 
 ```cd llvm-project-llvmorg-14.0.0/build/```
