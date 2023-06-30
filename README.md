@@ -71,7 +71,12 @@ Currently ConfD has six plugins:
 
 ConfD requires Ubuntu 20.04 and LLVM-14.0.0
 
-# Setup #
+ConfD requires Ubuntu 20.04 and LLVM-16.0.0
+
+ConfD requires MacOS(M2) and LLVM-16.0.0
+
+## Setup ##
+### For LLVM-14.0.0 and Ubuntu 20.04###
 
 **Setting up LLVM**
 
@@ -102,6 +107,62 @@ Add the following lines to ../CMakeLists.txt file
 
 ```cd llvm-project-llvmorg-14.0.0/build/```
 
+### For LLVM-16.0.0 and Ubuntu20.04###
+**Setting up LLVM**  
+
+[Download llvm 16 source code] (https://github.com/llvm/llvm-project/releases/tag/llvmorg-16.0.0)   
+Or ```wget https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.0.zip ```   
+
+Then
+
+```
+cd llvm-project-llvmorg-16.0.0
+mkdir build
+cd build
+
+cmake -S llvm -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local/llvm -G "Ninja" -DLLVM_USE_LINKER="gold" -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;lld;lldb" -DLLVM_ENABLE_RUNTIMES="libc;compiler-rt;libcxx;libcxxabi;libunwind"
+
+ninja
+```
+Set Environment Variable  
+
+```
+vi ~/.bashrc
+export PATH=YourPath/llvm-project-llvmorg-16.0.0/build/bin:$PATH
+source ~/.bashrc
+
+```
+
+### For LLVM-16.0.0 and MacOS(M2)###
+**Setting up LLVM** 
+
+[Download llvm 16 source code] (https://github.com/llvm/llvm-project/releases/tag/llvmorg-16.0.0)   
+Or ```wget https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.0.zip ```
+
+Then
+
+```
+cd llvm-project-llvmorg-16.0.0
+mkdir build
+cd build
+
+cmake -G Ninja -DLLVM_ENABLE_PROJECTS="clang;mlir;" -DLLVM_BUILD_EXAMPLES=ON -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_ASSERTIONS=On -DDEFAULT_SYSROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk ../llvm
+
+ninja -j32
+```
+Set Environment Variable  
+
+```
+vi ~/.zshrc
+
+PATH=/Users/jiachongliu/software/llvm-project-llvmorg-16.0.0/build/bin:$PATH
+
+source ~/.zshrc
+
+```
+
+
+-
 **Generating LLVM-IR using clang**
 
   Use clang to generate the LLVM-IR of the target program enabling debug information and "-fno-discard-value-names" CFLAG
