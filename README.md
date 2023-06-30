@@ -99,7 +99,7 @@ Add the following lines to ../CMakeLists.txt file
 
   add_subdirectory(interPro)
 
-  add_subdirectory(interPro)
+  add_subdirectory(trace_analyzer)
 
 ```mkdir llvm-project-llvmorg-14.0.0/build/```
 
@@ -161,7 +161,9 @@ export PATH=YouPath/llvm-project-llvmorg-16.0.0/build/bin:$PATH
 source ~/.zshrc
 ```
 
--------------------------------------
+
+
+-----------------------------------------------------------
 **Generating LLVM-IR using clang**
 
   Use clang to generate the LLVM-IR of the target program enabling debug information and "-fno-discard-value-names" CFLAG
