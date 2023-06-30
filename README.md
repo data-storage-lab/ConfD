@@ -73,10 +73,10 @@ ConfD requires Ubuntu 20.04 and LLVM-14.0.0
 
 ConfD requires Ubuntu 20.04 and LLVM-16.0.0
 
-ConfD requires MacOS(M2) and LLVM-16.0.0
+ConfD requires MacOS(M2)/UNIX and LLVM-16.0.0
 
 ## Setup ##
-### For LLVM-14.0.0 and Ubuntu 20.04###
+### For LLVM-14.0.0 and Ubuntu 20.04 ###
 
 **Setting up LLVM**
 
@@ -107,10 +107,10 @@ Add the following lines to ../CMakeLists.txt file
 
 ```cd llvm-project-llvmorg-14.0.0/build/```
 
-### For LLVM-16.0.0 and Ubuntu20.04###
+### For LLVM-16.0.0 and Ubuntu20.04 ###
 **Setting up LLVM**  
 
-[Download llvm 16 source code] (https://github.com/llvm/llvm-project/releases/tag/llvmorg-16.0.0)   
+[Download llvm 16 source code](https://github.com/llvm/llvm-project/releases/tag/llvmorg-16.0.0)   
 Or ```wget https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.0.zip ```   
 
 Then
@@ -128,15 +128,16 @@ Set Environment Variable
 
 ```
 vi ~/.bashrc
-export PATH=YourPath/llvm-project-llvmorg-16.0.0/build/bin:$PATH
-source ~/.bashrc
 
+export PATH=YourPath/llvm-project-llvmorg-16.0.0/build/bin:$PATH
+
+source ~/.bashrc
 ```
 
-### For LLVM-16.0.0 and MacOS(M2)###
+### For LLVM-16.0.0 and MacOS(M2)/UNIX ###
 **Setting up LLVM** 
 
-[Download llvm 16 source code] (https://github.com/llvm/llvm-project/releases/tag/llvmorg-16.0.0)   
+[Download llvm 16 source code](https://github.com/llvm/llvm-project/releases/tag/llvmorg-16.0.0)   
 Or ```wget https://github.com/llvm/llvm-project/archive/refs/tags/llvmorg-16.0.0.zip ```
 
 Then
@@ -155,14 +156,12 @@ Set Environment Variable
 ```
 vi ~/.zshrc
 
-PATH=/Users/jiachongliu/software/llvm-project-llvmorg-16.0.0/build/bin:$PATH
+export PATH=YouPath/llvm-project-llvmorg-16.0.0/build/bin:$PATH
 
 source ~/.zshrc
-
 ```
 
-
--
+-------------------------------------
 **Generating LLVM-IR using clang**
 
   Use clang to generate the LLVM-IR of the target program enabling debug information and "-fno-discard-value-names" CFLAG
