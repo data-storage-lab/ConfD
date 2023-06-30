@@ -1,459 +1,462 @@
 {
-    "64bit": {
-        "id": 1,
-        "variable": "ext2fs_has_feature_64bit",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ],
-        "critical": {
+    "function_name": "PRS",
+    "superblock": "ext2_super_block",
+    "parameters":
+    {
+        "64bit": {
+            "id": 1,
+            "variable": "ext2fs_has_feature_64bit",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ],
+            "critical": {
+            }
+        },
+        "bigalloc": {
+            "id": 2,
+            "variable": "ext2fs_has_feature_bigalloc",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ],
+            "critical": {
+            }
+        },
+        "blocksize": {
+            "id": 3,
+            "variable": "blocksize",
+            "flag": "-b",
+            "value_type": null,
+            "takes_value": "yes",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "cluster_size": {
+            "id": 4,
+            "variable": "cluster_size",
+            "flag": "-C",
+            "value_type": null,
+            "takes_value": "yes",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ],
+            "critical": {
+            }
+        },
+        "casefold": {
+            "id": 5,
+            "variable": "ext2fs_has_feature_casefold",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "dir_index": {
+            "id": 6,
+            "variable": "ext2fs_has_feature_dir_index",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "dir_nlink": {
+            "id": 7,
+            "variable": "ext2fs_has_feature_dir_nlink",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "ea_inode": {
+            "id": 8,
+            "variable": "ext2fs_has_feature_ea_inode",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "encoding": {
+            "id": 9,
+            "flag": "-E",
+            "value_type": null,
+            "takes_value": "yes",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "encrypt": {
+            "id": 10,
+            "variable": "ext2fs_has_feature_encrypt",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "ext_attr": {
+            "id": 11,
+            "variable": "ext2fs_has_feature_ext_attr",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "extents": {
+            "id": 12,
+            "variable": "ext2fs_has_feature_extents",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "extra_isize": {
+            "id": 13,
+            "variable": "ext2fs_has_feature_extra_isize",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "fast_commit": {
+            "id": 14,
+            "variable": "ext2fs_has_feature_fast_commit",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "filetype": {
+            "id": 15,
+            "variable": "ext2fs_has_feature_filetype",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "flex_bg": {
+            "id": 16,
+            "variable": "ext2fs_has_feature_flex_bg",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "flex_bg_size": {
+            "id": 17,
+            "variable": "flex_bg_size",
+            "flag": "-G",
+            "value_type": null,
+            "takes_value": "yes",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [],
+            "critical": {
+            }
+        },
+        "has_journal": {
+            "id": 18,
+            "variable": "ext2fs_has_feature_has_journal",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "huge_file": {
+            "id": 19,
+            "variable": "ext2fs_has_feature_huge_file",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "inline_data": {
+            "id": 20,
+            "variable": "ext2fs_has_feature_inline_data",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "inode_ratio": {
+            "id": 21,
+            "variable": "inode_ratio",
+            "flag": "-i",
+            "value_type": null,
+            "takes_value": "yes",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "inode_size": {
+            "id": 22,
+            "variable": "inode_size",
+            "flag": "-I",
+            "value_type": null,
+            "takes_value": "yes",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "journal_dev": {
+            "id": 23,
+            "variable": "ext2fs_has_feature_journal_dev",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "largedir": {
+            "id": 25,
+            "variable": "ext2fs_has_feature_largedir",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "large_file": {
+            "id": 26,
+            "variable": "ext2fs_has_feature_large_file",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "meta_bg": {
+            "id": 27,
+            "variable": "ext2fs_has_feature_meta_bg",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [],
+            "critical": {
+            }
+        },
+        "metadata_csum": {
+            "id": 28,
+            "variable": "ext2fs_has_feature_metadata_csum",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "metadata_csum_seed": {
+            "id": 29,
+            "variable": "ext2fs_has_feature_metadata_csum_seed",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "mmp": {
+            "id": 30,
+            "variable": "ext2fs_has_feature_mmp",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "num_inodes": {
+            "id": 31,
+            "variable": "num_inodes",
+            "flag": "-N",
+            "value_type": null,
+            "takes_value": "yes",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "lazy_itable_init": {
+            "id": 33,
+            "variable": "lazy_itable_init",
+            "flag": "-E",
+            "value_type": null,
+            "takes_value": "yes",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "no_copy_xattrs": {
+            "id": 34,
+            "variable": "no_copy_xattrs",
+            "flag": "-E",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "packed_meta_blocks": {
+            "id": 35,
+            "variable": "packed_meta_blocks",
+            "flag": "-E",
+            "value_type": null,
+            "takes_value": "yes",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "quota": {
+            "id": 36,
+            "variable": "ext2fs_has_feature_quota",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "reserved_ratio": {
+            "id": 37,
+            "variable": "reserved_ratio",
+            "flag": "-m",
+            "value_type": "double",
+            "takes_value": "yes",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "resize_inode": {
+            "id": 38,
+            "variable": "ext2fs_has_feature_resize_inode",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [],
+            "critical": {
+            }
+        },
+        "sparse_super": {
+            "id": 39,
+            "variable": "ext2fs_has_feature_sparse_super",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "sparse_super2": {
+            "id": 40,
+            "variable": "ext2fs_has_feature_sparse_super2",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "stable_inodes": {
+            "id": 41,
+            "variable": "ext2fs_has_feature_stable_inodes",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
+        },
+        "super_only": {
+            "id": 42,
+            "variable": "super_only",
+            "flag": "-S",
+            "value_type": null,
+            "takes_value": "flag_only",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "uninit_bg": {
+            "id": 43,
+            "variable": "ext2fs_has_feature_gdt_csum",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": [
+            ]
+        },
+        "verity": {
+            "id": 44,
+            "variable": "ext2fs_has_feature_verity",
+            "flag": "-O",
+            "value_type": null,
+            "takes_value": "no",
+            "value_range_max": null,
+            "value_range_min": null,
+            "dependency": []
         }
-    },
-    "bigalloc": {
-        "id": 2,
-        "variable": "ext2fs_has_feature_bigalloc",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ],
-        "critical": {
-        }
-    },
-    "blocksize": {
-        "id": 3,
-        "variable": "blocksize",
-        "flag": "-b",
-        "value_type": null,
-        "takes_value": "yes",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "cluster_size": {
-        "id": 4,
-        "variable": "cluster_size",
-        "flag": "-C",
-        "value_type": null,
-        "takes_value": "yes",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ],
-        "critical": {
-        }
-    },
-    "casefold": {
-        "id": 5,
-        "variable": "ext2fs_has_feature_casefold",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "dir_index": {
-        "id": 6,
-        "variable": "ext2fs_has_feature_dir_index",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "dir_nlink": {
-        "id": 7,
-        "variable": "ext2fs_has_feature_dir_nlink",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "ea_inode": {
-        "id": 8,
-        "variable": "ext2fs_has_feature_ea_inode",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "encoding": {
-        "id": 9,
-        "flag": "-E",
-        "value_type": null,
-        "takes_value": "yes",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "encrypt": {
-        "id": 10,
-        "variable": "ext2fs_has_feature_encrypt",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "ext_attr": {
-        "id": 11,
-        "variable": "ext2fs_has_feature_ext_attr",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "extents": {
-        "id": 12,
-        "variable": "ext2fs_has_feature_extents",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "extra_isize": {
-        "id": 13,
-        "variable": "ext2fs_has_feature_extra_isize",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "fast_commit": {
-        "id": 14,
-        "variable": "ext2fs_has_feature_fast_commit",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "filetype": {
-        "id": 15,
-        "variable": "ext2fs_has_feature_filetype",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "flex_bg": {
-        "id": 16,
-        "variable": "ext2fs_has_feature_flex_bg",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "flex_bg_size": {
-        "id": 17,
-        "variable": "flex_bg_size",
-        "flag": "-G",
-        "value_type": null,
-        "takes_value": "yes",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [],
-        "critical": {
-        }
-    },
-    "has_journal": {
-        "id": 18,
-        "variable": "ext2fs_has_feature_has_journal",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "huge_file": {
-        "id": 19,
-        "variable": "ext2fs_has_feature_huge_file",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "inline_data": {
-        "id": 20,
-        "variable": "ext2fs_has_feature_inline_data",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "inode_ratio": {
-        "id": 21,
-        "variable": "inode_ratio",
-        "flag": "-i",
-        "value_type": null,
-        "takes_value": "yes",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "inode_size": {
-        "id": 22,
-        "variable": "inode_size",
-        "flag": "-I",
-        "value_type": null,
-        "takes_value": "yes",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "journal_dev": {
-        "id": 23,
-        "variable": "ext2fs_has_feature_journal_dev",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "largedir": {
-        "id": 25,
-        "variable": "ext2fs_has_feature_largedir",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "large_file": {
-        "id": 26,
-        "variable": "ext2fs_has_feature_large_file",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "meta_bg": {
-        "id": 27,
-        "variable": "ext2fs_has_feature_meta_bg",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [],
-        "critical": {
-            "resize_inode": "disable"
-        }
-    },
-    "metadata_csum": {
-        "id": 28,
-        "variable": "ext2fs_has_feature_metadata_csum",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "metadata_csum_seed": {
-        "id": 29,
-        "variable": "ext2fs_has_feature_metadata_csum_seed",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-            "metadata_csum"
-        ]
-    },
-    "mmp": {
-        "id": 30,
-        "variable": "ext2fs_has_feature_mmp",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "num_inodes": {
-        "id": 31,
-        "variable": "num_inodes",
-        "flag": "-N",
-        "value_type": null,
-        "takes_value": "yes",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "lazy_itable_init": {
-        "id": 33,
-        "variable": "lazy_itable_init",
-        "flag": "-E",
-        "value_type": null,
-        "takes_value": "yes",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "no_copy_xattrs": {
-        "id": 34,
-        "variable": "no_copy_xattrs",
-        "flag": "-E",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "packed_meta_blocks": {
-        "id": 35,
-        "variable": "packed_meta_blocks",
-        "flag": "-E",
-        "value_type": null,
-        "takes_value": "yes",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "quota": {
-        "id": 36,
-        "variable": "ext2fs_has_feature_quota",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "reserved_ratio": {
-        "id": 37,
-        "variable": "reserved_ratio",
-        "flag": "-m",
-        "value_type": "double",
-        "takes_value": "yes",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "resize_inode": {
-        "id": 38,
-        "variable": "ext2fs_has_feature_resize_inode",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [],
-        "critical": {
-        }
-    },
-    "sparse_super": {
-        "id": 39,
-        "variable": "ext2fs_has_feature_sparse_super",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "sparse_super2": {
-        "id": 40,
-        "variable": "ext2fs_has_feature_sparse_super2",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "stable_inodes": {
-        "id": 41,
-        "variable": "ext2fs_has_feature_stable_inodes",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
-    },
-    "super_only": {
-        "id": 42,
-        "variable": "super_only",
-        "flag": "-S",
-        "value_type": null,
-        "takes_value": "flag_only",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "uninit_bg": {
-        "id": 43,
-        "variable": "ext2fs_has_feature_gdt_csum",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": [
-        ]
-    },
-    "verity": {
-        "id": 44,
-        "variable": "ext2fs_has_feature_verity",
-        "flag": "-O",
-        "value_type": null,
-        "takes_value": "no",
-        "value_range_max": null,
-        "value_range_min": null,
-        "dependency": []
     }
 }
