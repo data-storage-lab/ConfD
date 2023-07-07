@@ -19,3 +19,30 @@ Provide the function name (the function where the taint analysis will start from
 example:
 
 ```bin/opt -load build/lib/libinterProPass.so -enable-new-pm=0 -interpro mke2fs.ll```
+
+**How to generate mke2fs.ll**  
+
+***1.Installing e2fsprogs***
+
+```
+### You need Clang ###
+
+pip install wllvm
+
+git clone https://github.com/tytso/e2fsprogs.git
+
+cd e2fsprogs
+
+CC=wllvm ../configure --disable-nls CFLAGS="-g" LLVM_COMPILER=clang
+
+CC=wllvm make LLVM_COMPILER=clang
+
+```
+***2.bc file to ll file***  
+
+```
+cd e2fsprogs/build/misc
+
+llvm-dis mke2fs.bc -o mke2fs.ll
+
+```
