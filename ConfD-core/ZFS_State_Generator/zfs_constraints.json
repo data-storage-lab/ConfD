@@ -1,0 +1,73 @@
+{
+    "blocksize": {
+        "id": 1,
+        "variable": "ZFS_PROP_BLOCKSIZE",
+        "flag": "-b",
+        "value_type": "i64",
+        "takes_value": "yes",
+        "value_range_max": 32768,
+        "value_range_min": 512,
+        "dependency": [
+            "volblocksize"
+        ],
+        "critical": {
+            "volblocksize": "disable"
+        }
+    },
+    "volblocksize": {
+        "id": 2,
+        "variable": "ZFS_PROP_VOLBLOCKSIZE",
+        "flag": "-o",
+        "value_type": "i64",
+        "takes_value": "yes",
+        "value_range_max": 32768,
+        "value_range_min": 512,
+        "dependency": [
+            "blocksize"
+        ],
+        "critical": {
+            "blocksize": "disable"
+        }
+    },
+    "checksum": {
+        "id": 3,
+        "variable": "ZFS_PROP_CHECKSUM",
+        "flag": "-o",
+        "value_type": null,
+        "takes_value": "yes",
+        "value_range_max": "1",
+        "value_range_min": "0",
+        "dependency": [
+            "compression"
+        ],
+        "critical": {
+        }
+    },
+    "compression": {
+        "id": 4,
+        "variable": "ZFS_PROP_COMPRESSION",
+        "flag": "-o",
+        "value_type": null,
+        "takes_value": "yes",
+        "value_range_max": "1",
+        "value_range_min": "0",
+        "dependency": [
+            "checksum"
+        ],
+        "critical": {
+        }
+    },
+    "copies": {
+        "id": 5,
+        "variable": "ZFS_PROP_COPIES",
+        "flag": "-o",
+        "value_type": "i32",
+        "takes_value": "yes",
+        "value_range_max": "3",
+        "value_range_min": "1",
+        "dependency": [
+        ],
+        "critical": {
+        }
+    }
+}
