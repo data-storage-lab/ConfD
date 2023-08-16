@@ -9,17 +9,17 @@ The script requires a json file input:
 
 Running the script:
 
-	python3 zfs_config_state_builder.py <zpool path>
+	python3 zfs_config_state_builder.py <pool sizeforvolumes>
 	
 	Example:
-	python3 zfs_config_state_builder.py zpool/path
+	python3 zfs_config_state_builder.py zpool 512M
 	
 	
 	
-	python3 violate_config_state_builder.py <zpool path>
+	python3 violate_config_state_builder.py <pool sizeforvolumes>
 	
 	Example:
-	python3 zfs_violate_config_state_builder.py zpool/path
+	python3 zfs_violate_config_state_builder.py pool 512M
 
 Reading the results:
 	

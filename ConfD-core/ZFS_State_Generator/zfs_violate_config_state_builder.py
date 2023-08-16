@@ -50,84 +50,6 @@ def id_lookup(constraint_data, id):
             return (i)
 
 
-# Takes command line style config, adds params to existing Configuration
-def read_config(line, my_config):
-    params = line.split(' -')
-    # Parse command parameter
-    for param in params:
-        if (param != "(mkezfs)" and param != "\n" and param[0] != 'O'):
-
-            # print(param.strip().split(' '))
-            key = param.strip().split(' ')[0]
-            val = param.strip().split(' ')[1]
-            my_config.arg[reverse_argument_key["-" + key]] = val
-
-            # print(reverse_argument_key["-"+key])
-
-        # case '-O'
-        elif (param[0] == 'O'):
-            clean = param.strip().split(' ')[1].split(',')
-            for c in clean:
-                my_config.arg[c] = ""
-
-
-# Determines if a given Configuration is valid within given constraints
-def verify_config(my_config, constraint_data):
-    # Step 1 - verify all numerical constraints
-    # TODO account for postfixs on numbers
-    for a in my_config.arg:
-        if (a != "revision" and a != "encoding"):
-            # print(constraint_data[a])
-            # print(a + " : " + my_config.arg[a])
-            if (constraint_data[a]["takes_value"] == "yes"):
-                # Tests Max
-                if (constraint_data[a]["value_range_max"] != None and (
-                        int(constraint_data[a]["value_range_max"]) < int(my_config.arg[a]))):
-                    # print("Max:" + constraint_data[a]["value_range_max"])
-                    # print("Act:" + my_config.arg[a])
-                    # print(constraint_data[a])
-                    # print(" Max violated")
-                    return False
-                # Tests Min
-                if (constraint_data[a]["value_range_min"] != None and (
-                        int(constraint_data[a]["value_range_min"]) > int(my_config.arg[a]))):
-                    # print(constraint_data[a])
-                    # print(" Min violated")
-                    return False
-
-    # Step 2 - verify critical enabled/disabled and smaller
-    for a in my_config.arg:
-        if (a != "revision" and a != "encoding"):
-            # print(constraint_data[a])
-            # print(a + " : " + my_config.arg[a])
-            if (constraint_data[a].get("critical", None) != None):
-                # print(constraint_data[a]["critical"])
-                for crit in constraint_data[a]["critical"]:
-                    # print(crit + " : " + constraint_data[a]["critical"][crit])
-                    # enabled crit test
-                    if ((constraint_data[a]["critical"][crit] == "enable") and (
-                            (my_config.arg.get(crit, None) == None) or (my_config.arg[crit] == "disable"))):
-                        # print(constraint_data[a])
-                        # print(crit + " violated")
-                        # print("")
-                        return False
-                    if ((constraint_data[a]["critical"][crit] == "disable") and (
-                            my_config.arg.get(crit, None) != None) and (my_config.arg[crit] == "enable")):
-                        # print(constraint_data[a])
-                        # print(crit + " violated")
-                        # print("")
-                        return False
-                    # tests smaller
-                    if ((constraint_data[a]["critical"][crit] == "smaller") and (
-                            my_config.arg.get(crit, None) != None)):
-                        if (int(my_config.arg[a]) < int(my_config.arg[crit])):
-                            # print(constraint_data[a])
-                            # print(crit + " violated")
-                            # print("")
-                            return False
-    return True
-
-
 # gets critical dependencies where something needs to be disabled, also returns number of variables in the json
 def getCritDisable(constraint_data):
     disable = []
@@ -139,8 +61,10 @@ def getCritDisable(constraint_data):
 
     return disable
 
-def simpleCMD(state, constraint_data, place):
+
+def simpleCMD(state, constraint_data, place, vol_size):
     command = "zfs create "
+    block = True
 
     id = 1
 
@@ -155,6 +79,9 @@ def simpleCMD(state, constraint_data, place):
         variable = variable[9:]
         variable = variable.lower()
 
+        if variable == "blocksize":
+            variable = "recordsize"
+
         for b in default_feature_args:
             if (variable == b and a == default_feature_args[b]):
                 id += 1
@@ -163,8 +90,9 @@ def simpleCMD(state, constraint_data, place):
         if broken == True:
             continue
 
-        if variable == "blocksize":
+        if variable == "volblocksize":
             command += "-b "
+            block = False
         else:
             command += "-o "
 
@@ -174,10 +102,22 @@ def simpleCMD(state, constraint_data, place):
                 value = "off"
             else:
                 value = "on"
-        command += str(variable) + "=" + str(value) + " "
+
+        if variable != "volblocksize":
+            command += str(variable) + "="
+        command += str(value) + " "
+
         id += 1
 
-    command += place
+    global num_block
+    global num_volume
+
+    if block == True:
+        num_block += 1
+        command += place + "/block" + str(num_block)
+    else:
+        num_volume += 1
+        command += "-V " + str(vol_size) + " " + place + "/volume" + str(num_volume)
     return command
 
 
@@ -265,11 +205,12 @@ def main(argv):
     #    print("Missing zfs_default_config.json file")
     #    return -1
 
-    if (len(sys.argv) != 2):
+    if (len(sys.argv) != 3):
         print("Invalid arguments")
         return -1
 
     location = sys.argv[1]
+    vol_size = sys.argv[2]
 
     # get constraints
     json_file = open('zfs_constraints.json')
@@ -329,11 +270,16 @@ def main(argv):
 
     simpleGenerate(blank_config, constraint_data, disable, num_vars)
 
+    global num_block
+    global num_volume
+    num_block = 0
+    num_volume = 0
+
     print("\nFinal States:")
     output_file = open("zfs_output.txt", "w")
     for state in state_list:
 
-        cmd = simpleCMD(state, constraint_data, location)
+        cmd = simpleCMD(state, constraint_data, location, vol_size)
         print(cmd)
         output_file.write(cmd + "\n")
 
