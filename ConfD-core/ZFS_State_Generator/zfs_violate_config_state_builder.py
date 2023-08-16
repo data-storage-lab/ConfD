@@ -17,17 +17,17 @@ states_made = 0
 max_depth = 0
 
 argument_key = {
-    "blocksize": "-b", "feature": "-o"
+    "volblocksize": "-b", "feature": "-o"
 }
 
 reverse_argument_key = {v: k for k, v in argument_key.items()}
 
 feature_args = {
-    "volblocksize", "checksum", "compression", "copies"
+    "recordsize", "checksum", "compression", "copies"
 }
 
 default_feature_args = {
-    "volblocksize": 8192,
+    "recordsize": 8192,
     "checksum": 0,
     "compression": 0,
     "copies": 2
