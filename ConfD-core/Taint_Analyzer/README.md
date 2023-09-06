@@ -33,6 +33,8 @@ git clone https://github.com/tytso/e2fsprogs.git
 
 cd e2fsprogs
 
+mkdir build && cd build
+
 CC=wllvm ../configure --disable-nls CFLAGS="-g" LLVM_COMPILER=clang
 
 CC=wllvm make LLVM_COMPILER=clang
