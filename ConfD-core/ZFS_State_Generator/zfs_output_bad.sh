@@ -1,3 +1,5 @@
+#!/bin/bash
+
 zfs create -o checksum=on -o compression=on -o copies=-1 zpool/block1
 zfs create -o checksum=on -o compression=on -o copies=0 zpool/block2
 zfs create -o checksum=on -o compression=on -o copies=1 zpool/block3

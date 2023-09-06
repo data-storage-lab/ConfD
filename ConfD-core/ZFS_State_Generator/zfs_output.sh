@@ -1,3 +1,5 @@
+#!/bin/bash
+
 zfs create -b 512 -o copies=1 -V 1G /zpool/volume1
 zfs create -b 512 -V 1G /zpool/volume2
 zfs create -b 512 -o copies=3 -V 1G /zpool/volume3

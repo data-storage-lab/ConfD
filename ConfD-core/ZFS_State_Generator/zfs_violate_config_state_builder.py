@@ -276,15 +276,20 @@ def main(argv):
     num_volume = 0
 
     print("\nFinal States:")
-    output_file = open("zfs_output.txt", "w")
-    for state in state_list:
+    output_file = open("zfs_output_bad.txt", "w")
+    output_shell = open("zfs_output_bad.sh", "w")
 
+    #Specific for the shell script
+    output_shell.write("#!/bin/bash\n\n")
+
+    for state in state_list:
         cmd = simpleCMD(state, constraint_data, location, vol_size)
         print(cmd)
         output_file.write(cmd + "\n")
-
+        output_shell.write(cmd + "\n")
 
     output_file.close()
+    output_shell.close()
 
 
 if __name__ == "__main__":
