@@ -35,9 +35,11 @@ cd e2fsprogs
 
 mkdir build && cd build
 
-CC=wllvm ../configure --disable-nls CFLAGS="-g" LLVM_COMPILER=clang
+export LLVM_COMPILER=clang
 
-CC=wllvm make LLVM_COMPILER=clang
+CC=wllvm LLVM_COMPILER=clang CFLAGS="-g -O1 -Xclang -disable-llvm-passes -fno-discard-value-names" ../configure
+
+CC=wllvm LLVM_COMPILER=clang make
 
 ```
 ***2.bc file to ll file***  
