@@ -71,6 +71,8 @@ Currently ConfD has six plugins:
 
 ConfD requires Ubuntu 20.04 and LLVM-14.0.0
 
+ConfD requires Ubuntu 20.04 and LLVM-14.0.0 (make)
+
 ConfD requires Ubuntu 20.04 and LLVM-16.0.0
 
 ConfD requires MacOS(M2)/UNIX and LLVM-16.0.0
@@ -107,7 +109,20 @@ Add the following lines to ../CMakeLists.txt file
 
 ```cd llvm-project-llvmorg-14.0.0/build/```
 
-### For LLVM-16.0.0 and Ubuntu20.04 ###
+### For LLVM-14.0.0 (make) and Ubuntu 20.04 ###
+
+```
+wget https://github.com//llvm/llvm-project/archive/refs/tags/llvmorg-14.0.0.zip
+unzip llvmorg-14.0.0.zip
+cd llvm-project-llvmorg-14.0.0
+cmake -S llvm -B build -G "Unix Makefiles" -DLLVM_ENABLE_PROJECTS="clang" -DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi"
+cd build 
+make clang -j48
+cmake --build . -j48
+
+```
+
+### For LLVM-16.0.0 and Ubuntu 20.04 ###
 **Setting up LLVM**  
 
 [Download llvm 16 source code](https://github.com/llvm/llvm-project/releases/tag/llvmorg-16.0.0)   
